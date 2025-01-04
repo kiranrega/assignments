@@ -5,7 +5,16 @@
 */
 
 function isAnagram(str1, str2) {
-
-}
-
-module.exports = isAnagram;
+  let strR1 =  removeSpacesAndSpecialChars(str1.toLowerCase()).trim()
+  let strR2 =  removeSpacesAndSpecialChars(str2.toLowerCase()).trim()
+   if (strR1.length !== strR2.length) { return false };
+   return strR1.split("").sort().join("") === strR2.split("").sort().join("") 
+ }
+ module.exports = isAnagram
+ 
+ function removeSpacesAndSpecialChars(str) {
+   // Remove spaces and special characters using regular expressions
+   return str.replace(/[^a-zA-Z0-9]/g, '');
+ }
+ 
+ 
